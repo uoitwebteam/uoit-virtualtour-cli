@@ -1,0 +1,24 @@
+{
+  "name": "uoit-virtualtour-cli",
+  "version": "1.0.0",
+  "description": "A command-line interface for UOIT Virtual Tour deployment control and other utilities.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wosevision/uoit-virtualtour-cli.git"
+  },
+  "keywords": [
+    "node",
+    "cli",
+    "git"
+  ],
+  "author": "Jackson Teather",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/wosevision/uoit-virtualtour-cli/issues"
+  },
+  "homepage": "https://github.com/wosevision/uoit-virtualtour-cli#readme"
+}
