@@ -4,7 +4,6 @@ const program			 = require('commander');
 
 const utils 			 = require('./lib/utils');
 const githubAuth 	 = require('./lib/auth/github');
-const sshAuth 	 	 = require('./lib/auth/ssh');
 const commands 		 = require('./lib/commands');
 
 /* Delete Github token: */
@@ -30,8 +29,8 @@ githubAuth().then(() => {
 		.description('install the project locally')
 		.action(env => {
 			commands.install()
-				.then(result => console.log('Install done! called:', result))
-				.catch(err => console.log('An error has occured! ', err));
+				.then(result => utils.logSuccess('Install done! called:', result))
+				.catch(err => utils.logError('An error has occured! ', err));
 		});
 
 	program
@@ -39,8 +38,8 @@ githubAuth().then(() => {
 		.description('push a production copy to the server')
 		.action(env => {
 			commands.deploy()
-				.then(result => console.log('Deploy done! called:', result))
-				.catch(err => console.log('An error has occured! ', err));
+				.then(result => utils.logSuccess('Deploy done! called:', result))
+				.catch(err => utils.logError('An error has occured! ', err));
 		});
 
 	program.parse(process.argv);
@@ -48,7 +47,7 @@ githubAuth().then(() => {
 	if (!program.args.length) {
 		utils.renderLogo();
 		commands.menu()
-			.then(result => console.log('Done! called:', result))
-			.catch(err => console.log('An error has occured!', err));
+			.then(result => utils.logSuccess('Done! called:', result))
+			.catch(err => utils.logError('An error has occured!', err));
 	}
 });
