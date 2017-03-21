@@ -29,35 +29,26 @@ githubAuth().then(() => {
 		.command('install')
 		.description('install the project locally')
 		.action(env => {
-			commands.install((err, result) =>{
-			  if (err) {
-			    console.log('An error has occured');
-			  }
-			  console.log('Install done! called:', result);
-			});
+			commands.install()
+				.then(result => console.log('Install done! called:', result))
+				.catch(err => console.log('An error has occured! ', err));
 		});
 
 	program
 		.command('deploy')
 		.description('push a production copy to the server')
 		.action(env => {
-			commands.deploy((err, result) =>{
-			  if (err) {
-			    console.log('An error has occured');
-			  }
-			  console.log('Deploy done! called:', result);
-			});
+			commands.deploy()
+				.then(result => console.log('Deploy done! called:', result))
+				.catch(err => console.log('An error has occured! ', err));
 		});
 
 	program.parse(process.argv);
 
 	if (!program.args.length) {
 		utils.renderLogo();
-		commands.menu((err, result) =>{
-		  if (err) {
-		    console.log('An error has occured');
-		  }
-		  console.log('Done! called:', result);
-		});
+		commands.menu()
+			.then(result => console.log('Done! called:', result))
+			.catch(err => console.log('An error has occured!', err));
 	}
 });
