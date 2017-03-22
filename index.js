@@ -6,8 +6,12 @@ const utils 			 = require('./lib/utils');
 const githubAuth 	 = require('./lib/auth/github');
 const commands 		 = require('./lib/commands');
 
+// const { PREFERENCES } = require('./lib/constants');
 /* Delete Github token: */
-// PREFERENCES.github = {}
+// PREFERENCES.github = {};
+/* Reset saved SSH credentials: */
+// PREFERENCES.sshConnections = [];
+// PREFERENCES.sshStoredKeys = [];
 
 const { version } = require('./package.json');
 const lastOpen = new Date();

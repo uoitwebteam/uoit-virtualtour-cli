@@ -35,7 +35,6 @@
     "github": "^9.2.0",
     "inquirer": "^3.0.6",
     "listr": "^0.11.0",
-    "node-ssh": "^4.0.1",
     "preferences": "^0.2.1",
     "rsync": "^0.6.1",
     "simple-git": "^1.67.0",
